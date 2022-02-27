@@ -1,0 +1,16 @@
+.bi {
+    color: white;
+    height: 25px;
+    width: 25px;
+    margin: 45px 10px 5px 20px;
+  }
+  .footer-copy {
+    color: white;
+    margin-top: 3%;
+  }
+  .footer {
+    text-align: center;
+    align-items: center;
+    margin-top: 15%;
+  }
+  
