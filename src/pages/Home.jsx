@@ -6,21 +6,19 @@ import Footer from '../component/Footer';
 
 const Home =()=>{
 
-  const [datasOne, setDatasOne] = useState();
+  axios.get("http//localhost:5000")
+  .then((response)=> console.log(response))
+  .catch((error)=> console.log("error"+error));
 
+  const [datasOne, setDatasOne] = useState([]);
   useEffect(()=>{
-    const getData = ()=>{
-      return axios.get('http://127.0.0.1:5000/')
-      .then(result => setDatasOne([...datasOne,result.data.rows]))
-      .catch((error)=> console.log(error));
-    }
-    getData();
-  },[])
-  
-  // console.log(datasOne[0][0].country)
-
+    axios.get('http://localhost:5000/')
+    .then(response => setDatasOne([...datasOne,response.data.rows]))
+    .then((response=> console.log(response)))
+    .catch((error)=> console.log(error))
+  },[]);
+      
   return (
-    // <p>hello</p>
   <div className='container-fluid bg-dark text-white'>
     <Header />
     <div className='container-fluid bg-dark text-white'>
@@ -34,15 +32,7 @@ const Home =()=>{
     </tr>
   </thead>
   <tbody>
-    {/* {datasOne.map((data,key)=>{
-      return data.map((eachData,key)=>{
-        return(
-          <tr key={key}>
-            <td>{eachData.country}</td>
-          </tr>
-        )
-      })
-    })} */}
+    {}
   </tbody>
 </table>
     </div>
